@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Click Lasagna</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts.js"></script>
+  </head>
+  <body oncontextmenu="return false">
+    <div class="container">
+      <div class="top-content">
+        <div class="click-speed-bar">
+          <table class="speed-gauge">
+            <tr>
+              <td id="speed1" class="speed-gauge-bar"></td>
+              <td id="speed2" class="speed-gauge-bar"></td>
+              <td id="speed3" class="speed-gauge-bar"></td>
+            </tr>
+          </table>
+          <img id="speed4" src="img/toasty.png" class="speed-gauge-bar">
+        </div>
+        <p id="sub-count" class="big-text">+0</p>
+        <p id="multiplier" class="big-text"></p>
+      </div>
+      <button id="subscribe">
+        <!-- <audio id="t-gay">
+          <source src="t-gay.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio> -->
+        <p class="big-text">burn<br>toast</p>
+      </button>
+    </div>
+    <!-- User login form -->
+    <div class="form-container">
+      <form id="login-form" action="login.php" method="post">
+        username: <input type="text" name="username" required><br>
+        password: <input type="password" name="pwd" required><br>
+        <input type="submit" value="Log in">
+      </form>
+      <a href="register.html">Register</a>
+      <a href="forgot.php">Forgot password?</a>
+      <form id="register-form" action="register.php" method="post">
+        security question: <input type="text" name="question" required><br>
+        answer: <input type="text" name="answer" required><br>
+        <input type="submit" value="Register">
+      </form>
+    </div>
+  </body>
+</html>
