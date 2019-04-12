@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black');
 
+/* body size matches screen size exactly */
 body {
   height: 100vh;
   width: 100vw;
@@ -9,11 +10,8 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  width: 90vw;
-  height: 90vh;
-  margin: 5vh auto;
-  /* background-color: #0004; */
+/* centers content with flexbox */
+.toast-container,.cover-game {
   text-align: center;
   display: flex;
   flex-wrap: wrap;
@@ -21,10 +19,60 @@ body {
   align-content: space-between;
 }
 
-.top-content {
+/* container for active game objects */
+.toast-container {
+  width: 90vw;
+  height: 94vh;
+  margin: 3vh auto;
+}
+
+/* container for instructions screen/cover */
+.cover-game {
+  width: 90vw;
+  height: 94vh;
+  padding: 3vh 5vw;
+  background-color: #000A;
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* content in upper section of a container */
+.content-half {
   width: 100%;
 }
 
+/* full width button */
+.big-button {
+  width: 400px;
+  max-width: 100%;
+  height: 150px;
+  border-radius: 15px;
+  line-height: 60px;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+
+/* pre-determined color classes */
+.red {
+  background-color: #f00;
+}
+
+.red:hover {
+  background-color: #d00000 !important;
+}
+
+.green {
+  background-color: #00b533;
+}
+
+.green:hover {
+  background-color: #018927 !important;
+}
+
+/* large text styling */
 .big-text {
   font-family: 'Archivo Black', sans-serif;
   color: #fff;
@@ -56,6 +104,7 @@ body {
 
 .speed-gauge {
   width: 80%;
+  margin-top: 30px;
 }
 
 .speed-gauge-bar {
@@ -80,30 +129,45 @@ body {
   height: 100px;
   margin-left: -32px;
   padding: 0 !important;
+  /* filter: brightness(1) !important; */
 }
 
 .lit-click-speed {
   filter: brightness(1) !important;
 }
 
-.brofist-lit-click-speed {
+.toasty-lit-click-speed {
   transform: scale(1.3,1.3);
 }
 
-#subscribe:hover {
-  background-color: #d00000 !important;
+#toaster {
+  width: 100%;
+  height: auto;
+  margin-bottom: 50px;
 }
 
-#subscribe {
-  width: 400px;
-  max-width: 100%;
-  height: 150px;
-  border-radius: 15px;
-  background-color: #f00;
-  line-height: 60px;
-  padding: 0;
-  border: none;
-  outline: none;
+#toaster img {
+  width: 50%;
+}
+
+#toaster::after {
+  content: "";
+  width: 4vw;
+  height: 3vw;
+  background-color: #000;
+  margin: 4vw 0 0 0;
+  border-radius: 0 50% 50% 0;
+  position: absolute;
+  transition: margin .1s;
+}
+
+#toaster.toasting::after {
+  margin: 24vw 0 0 0 !important;
+  transition: margin .5s ease-out;
+}
+
+#start {
+  z-index: 6;
 }
 
 .subscribe-active {
