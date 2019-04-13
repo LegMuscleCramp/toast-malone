@@ -8,7 +8,7 @@
   <title>Forgot password</title>
 </head>
 <body>
-  <form class="" action="" method="post">
+  <form class="" action="retrieve.php" method="post">
     username: <input type="text" name="username"><br>
     question: <input type="text" name="question"><br>
     answer: <input type="text" name="answer"><br>
