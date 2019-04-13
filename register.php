@@ -10,7 +10,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
   $username = $_POST['username'];
-  $password = $_POST['password'];
+  $password = $_POST['pwd'];
   $securityQuestion = $_POST['question'];
   $securityAnswer = $_POST['answer'];
   $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
