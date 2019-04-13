@@ -11,12 +11,14 @@
   }
   $username = $_POST['username'];
   $password = $_POST['password'];
+  $securityQuestion = $_POST['question'];
+  $securityAnswer = $_POST['answer'];
   $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
     VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
   // $sql = "CALL registerNewUser('$username','$password')";
 
   if ($conn->query($sql) == TRUE) {
-      header("Location: http://codd.cs.gsu.edu/~lgarciasainz1/FinalProject/login.html"); // NOTE: change path
+      header("Location: http://codd.cs.gsu.edu/~lgarciasainz1/FinalProject/submit-score.php"); // NOTE: where are we redirecting?
       exit();
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
