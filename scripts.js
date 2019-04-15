@@ -16,7 +16,7 @@ $(document).ready(function() {
     $(".cover-game,#start").hide();
     $("#toaster").addClass("toasting");
     var timerId = setInterval(countdown, 1000);
-    timeLeft = 4;
+    timeLeft = 30;
     var timerDisplay = $("#timer");
     function countdown() {
       if (timeLeft==0) {
@@ -61,7 +61,7 @@ function showClickSpeed(clickGhost) {
     case (currentSpeed>=4):
       clickGauge = $("#speed4");
       illuminateSpeedGauge(clickGauge,currentSpeed);
-      clickGauge.attr("src","img/flaming-toast-light.png");
+      clickGauge.children("img").attr("src","img/flaming-toast-light.png");
     case (currentSpeed==3):
       clickGauge = $("#speed3");
       illuminateSpeedGauge(clickGauge,currentSpeed);
@@ -85,7 +85,7 @@ function showClickSpeed(clickGhost) {
 
 function illuminateSpeedGauge(glow,x) {
   dim = $(".speed-gauge-bar:gt("+(x-1)+")");
-  $(".speed-gauge-bar:gt("+(x-1)+")#speed4").attr("src","img/toasty.png");
+  $(".speed-gauge-bar:gt("+(x-1)+")#speed4").children("img").attr("src","img/toasty.png");
   dim.removeClass("lit-click-speed");
   glow.addClass("lit-click-speed");
 }
