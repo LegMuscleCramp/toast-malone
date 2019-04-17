@@ -44,12 +44,11 @@ body {
 
 /* full width button */
 .big-button {
-  width: 400px;
-  max-width: 100%;
-  height: 150px;
+  width: 100%;
+  height: auto;
   border-radius: 15px;
-  line-height: 60px;
-  padding: 0;
+  line-height: 12vw;
+  padding: 12px;
   border: none;
   outline: none;
 }
@@ -76,7 +75,7 @@ body {
   font-family: 'Archivo Black', sans-serif;
   color: #fff;
   text-align: center;
-  font-size: 48px;
+  font-size: 10vw;
   text-transform: uppercase;
   margin-block-start: 0;
   margin-block-end: 0;
@@ -150,10 +149,40 @@ body {
   transform: scale(1.3,1.3);
 }
 
-#toaster {
+#toast-slice, #toaster {
   width: 100%;
   height: auto;
+}
+
+#toast-slice {
+  margin-bottom: -4vw;
+  transition: margin-bottom .1s ease-out;
+}
+
+#toast-slice.toasting {
+  margin-bottom: -27vw !important;
+  transition: margin-bottom .5s ease-out;
+}
+
+#toast-slice img {
+  width: 28%;
+}
+
+.light-toast {
+  filter: brightness(.95);
+}
+
+.dark-toast {
+  filter: brightness(.8);
+}
+
+.burnt-toast {
+  filter: brightness(.1);
+}
+
+#toaster {
   margin-bottom: 50px;
+  filter: brightness(1);
 }
 
 #toaster img {
@@ -168,12 +197,12 @@ body {
   margin: 4vw 0 0 0;
   border-radius: 0 50% 50% 0;
   position: absolute;
-  transition: margin .1s;
+  transition: margin .2s;
 }
 
 #toaster.toasting::after {
   margin: 24vw 0 0 0 !important;
-  transition: margin .5s ease-out;
+  transition: margin 1s ease-out;
 }
 
 #start {
