@@ -15,10 +15,9 @@
   $securityAnswer = $_POST['answer'];
   $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
     VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
-  // $sql = "CALL registerNewUser('$username','$password')";
 
   if ($conn->query($sql) == TRUE) {
-      header("Location: http://codd.cs.gsu.edu/~lgarciasainz1/FinalProject/submit-score.php"); // NOTE: where are we redirecting?
+      header("Location: submit-score.php");
       exit();
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;

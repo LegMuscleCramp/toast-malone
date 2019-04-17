@@ -14,8 +14,11 @@
       die("Connection failed: " . $conn->connect_error);
     }
     $user=$_POST["username"];
-    $_SESSION["user"] = $user;
+    // $_SESSION["user"] = $user;
     $pass=$_POST["pwd"];
+
+    // grab score variable from JS
+    
 
     // check if username and password are correct
     $sql = "SELECT name FROM user WHERE username='$user' AND password='$pass'";
@@ -24,14 +27,15 @@
     if ($result -> num_rows > 0) {
       // output data of each row
       while($row = $result -> fetch_assoc()) {
-        $_SESSION["name"] = $row["name"];
-        // echo "Welcome " . $row["name"] . "<br>";
-        // header("Location: user_home.php");
+        if ($user == $row["username"]){
+          $_SESSION["user"] = $user;
+        }
+        header("Location: submit-score.php");
       }
     }
     else{
-      echo "Incorrect password. Try again.";
-      header("refresh:2; url=login.html");
+      echo "Incorrect password. Try again."; // redirect back to login form...
+      // header("refresh:2; url=index.html");
     }
 
     $conn -> close();
