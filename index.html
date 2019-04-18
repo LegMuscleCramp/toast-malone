@@ -81,6 +81,16 @@
         <input type="submit" value="Register">
         <span id="login-link" class="form-help-links">return to login</span>
       </form>
+      <form id="forgot-form" action="retrieve.php" method="post">
+        <span class="input-label">username</span><br>
+        <input type="text" name="username" required><br>
+        <span class="input-label">security question</span><br>
+        <input type="text" name="question" required><br>
+        <span class="input-label">security answer</span><br>
+        <input type="text" name="answer" required><br>
+        <input type="submit" value="Submit">
+        <span id="login-link2" class="form-help-links">return to login</span>
+      </form>
     </div>
   </body>
 </html>
