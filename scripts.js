@@ -4,8 +4,25 @@ var totalClicks = 0; // used to determine if user still clicking after 250ms
 var allowClickCalc = true; // boolean that prohibits calculation of clickspeed if calculation already ongoing
 var score = 0;
 var playable = false;
+var gameOver = false;
 
 $(document).ready(function() {
+  var loginForm = $("#login-form");
+  var registerForm = $("#register-form");
+  $(".form-container").hide();
+  registerForm.hide();
+
+  $("#register-link").on("click",function(){
+    loginForm.hide();
+    registerForm.show();
+  });
+
+  $("#login-link").on("click",function(){
+    registerForm.hide();
+    loginForm.show();
+  });
+
+
   var burnButton = $("#burn-toast");
   var scoreText = $("#sub-count");
   var toasty = $("#speed4");
@@ -126,6 +143,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
   scoreText.removeClass("big-text-active");
   toasty.removeClass("toasty-lit-click-speed");
   toasty.attr("src","img/toasty.png");
+  $("#speed4").attr("src","img/toasty-multiplier.png");
   var timer = $("#timer");
   timer.html("time's up");
   timer.attr("style","z-index:6");
