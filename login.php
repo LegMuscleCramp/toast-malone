@@ -18,7 +18,7 @@
     $pass=$_POST["pwd"];
 
     // grab score variable from JS
-    
+    $_SESSION["score"] = "1000"; // NOTE: hardcoded score - grab it instead from JAVASCRIPT
 
     // check if username and password are correct
     $sql = "SELECT name FROM user WHERE username='$user' AND password='$pass'";
