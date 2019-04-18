@@ -13,11 +13,11 @@
       if($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
       }
-      // get score and username
+      // get user score and username
       $username = $_SESSION['user'];
       $score = $_POST['variable'];
       $_SESSION['score'] = $score;
-      
+
       // post to DB
       $sql = "INSERT INTO fp_highScores (username, score) VALUES ('$username', '$score')";
       if ($conn->query($sql) == TRUE) {

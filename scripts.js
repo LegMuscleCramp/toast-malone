@@ -183,6 +183,6 @@ function endGame(burnButton,scoreText,toasty,dim) {
     $(".form-container").removeClass("hidden");
   },4500);
 
-  // send score to php file
+  //send score to php file 
   $.post('submit-score.php', {variable: score});
 }
