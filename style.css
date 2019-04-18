@@ -30,15 +30,16 @@ body {
 /* container for active game objects */
 .toast-container {
   width: 90vw;
-  height: 94vh;
-  margin: 3vh auto;
+  height: 86vh;
+  margin: 7vh auto;
+  overflow-y: hidden;
 }
 
 /* styling for game cover  */
 .cover-game,.form-container {
   width: 90vw;
-  height: 94vh;
-  padding: 3vh 5vw;
+  height: 86vh;
+  padding: 7vh 5vw;
   background-color: rgba(0,0,0,0.7);
   z-index: 5;
   position: absolute;

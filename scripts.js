@@ -27,7 +27,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 600;
+        timeLeft = 30;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
