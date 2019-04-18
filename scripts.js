@@ -134,13 +134,13 @@ function illuminateSpeedGauge(glow,x) {
 }
 
 function animateScore(burnButton,scoreText,toasty) {
-  burnButton.removeClass("subscribe-active");
+  burnButton.removeClass("toast-active");
   scoreText.removeClass("big-text-active");
-  burnButton.addClass("subscribe-active");
+  burnButton.addClass("toast-active");
   scoreText.addClass("big-text-active");
   if(clickSpeed==1000) toasty.addClass("toasty-lit-click-speed");
   setTimeout(function(){
-    burnButton.removeClass("subscribe-active");
+    burnButton.removeClass("toast-active");
     toasty.removeClass("toasty-lit-click-speed");
     scoreText.removeClass("big-text-active");
   },250);
@@ -148,7 +148,7 @@ function animateScore(burnButton,scoreText,toasty) {
 
 function endGame(burnButton,scoreText,toasty,dim) {
   playable = false;
-  burnButton.removeClass("subscribe-active");
+  burnButton.removeClass("toast-active");
   dim.removeClass("lit-click-speed");
   scoreText.removeClass("big-text-active");
   toasty.removeClass("toasty-lit-click-speed");
@@ -183,6 +183,6 @@ function endGame(burnButton,scoreText,toasty,dim) {
     $(".form-container").removeClass("hidden");
   },4500);
 
-  //send score to php file 
+  //send score to php file
   $.post('submit-score.php', {variable: score});
 }
