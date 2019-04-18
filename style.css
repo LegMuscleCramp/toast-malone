@@ -9,6 +9,13 @@ body {
   display: inline;
   overflow-x: hidden;
   text-transform: uppercase;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 /* centers content with flexbox */
@@ -32,7 +39,7 @@ body {
   width: 90vw;
   height: 94vh;
   padding: 3vh 5vw;
-  background-color: #000A;
+  background-color: #000B;
   z-index: 5;
   position: absolute;
   top: 0;
@@ -157,12 +164,12 @@ body {
 
 #toast-slice {
   margin-bottom: -4vw;
-  transition: margin-bottom .1s ease-out;
+  transition: margin-bottom .2s;
 }
 
 #toast-slice.toasting {
   margin-bottom: -27vw !important;
-  transition: margin-bottom .5s ease-out;
+  transition: margin-bottom 1s ease-out;
 }
 
 #toast-slice img {
@@ -274,4 +281,106 @@ form span.form-help-links {
 
 .hidden {
   display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  /* container for active game objects */
+  .toast-container {
+    width: 40vw;
+    height: 90vh;
+    margin: 5vh auto;
+  }
+
+  /* styling for game cover  */
+  .cover-game,.form-container {
+    width: 40vw;
+    height: 90vh;
+    padding: 5vh 30vw;
+  }
+
+  .big-text {
+    font-size: 5vh;
+  }
+
+  /* full width button */
+  .big-button {
+    width: 50%;
+    line-height: 7vh;
+    padding: 16px;
+  }
+
+  #toast-slice {
+    margin-bottom: -2vh;
+  }
+
+  #toast-slice.toasting {
+    margin-bottom: -17vh !important;
+  }
+
+  #toast-slice img {
+    width: 18%;
+  }
+
+  #toaster img {
+    width: 34%;
+  }
+
+  #toaster::after {
+    width: 2vh;
+    height: 1.5vh;
+    margin: 2vh 0 0 0;
+  }
+
+  #toaster.toasting::after {
+    margin: 15vh 0 0 0 !important;
+  }
+
+  .form-container {
+    min-height: 0;
+  }
+
+  span#final-score {
+    font-size: 8vh;
+    font-family: 'Archivo Black'
+  }
+
+  span.score-submit-notify {
+    width: 100%;
+    font-size: 4vh;
+    color: #fff;
+    font-family: 'Francois One';
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 100%;
+    font-family: 'Francois One';
+    font-size: 2vh;
+  }
+
+  form input {
+    border-radius: 15px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    outline: none;
+    text-align: center;
+    font-family: 'Francois One';
+    font-size: 3vh;
+  }
+
+  form input[type="submit"] {
+    width: 100%;
+    text-transform: uppercase;
+    background-color: #4286f4;
+    color: #fff;
+  }
+
+  form span.form-help-links {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+  }
 }

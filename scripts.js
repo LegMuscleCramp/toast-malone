@@ -27,7 +27,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 5;
+        timeLeft = 30;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -142,8 +142,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
   dim.removeClass("lit-click-speed");
   scoreText.removeClass("big-text-active");
   toasty.removeClass("toasty-lit-click-speed");
-  toasty.attr("src","img/toasty.png");
-  $("#speed4").attr("src","img/toasty-multiplier.png");
+  toasty.attr("src","img/toasty-multiplier.png");
   var timer = $("#timer");
   timer.html("time's up");
   timer.attr("style","z-index:6");
