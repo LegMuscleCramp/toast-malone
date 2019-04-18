@@ -10,14 +10,14 @@
     die("Connection failed: " . $conn->connect_error);
   }
   $username = $_POST['username'];
-  $password = $_POST['pwd'];
+  $password = $_POST['password'];
   $securityQuestion = $_POST['question'];
   $securityAnswer = $_POST['answer'];
   $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
     VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
 
   if ($conn->query($sql) == TRUE) {
-      header("Location: submit-score.php");
+      header("Location: login.php"); //redirect user to login page
       exit();
   } else {
       echo "Error: " . $sql . "<br>" . $conn->error;

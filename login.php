@@ -14,14 +14,13 @@
       die("Connection failed: " . $conn->connect_error);
     }
     $user=$_POST["username"];
-    // $_SESSION["user"] = $user;
     $pass=$_POST["pwd"];
 
     // grab score variable from JS
     $_SESSION["score"] = "1000"; // NOTE: hardcoded score - grab it instead from JAVASCRIPT
 
     // check if username and password are correct
-    $sql = "SELECT name FROM user WHERE username='$user' AND password='$pass'";
+    $sql = "SELECT username FROM `fp_users` WHERE username='$user' AND password='$pass'";
     $result = $conn -> query($sql);
 
     if ($result -> num_rows > 0) {
