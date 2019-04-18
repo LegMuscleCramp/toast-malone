@@ -218,17 +218,32 @@ body {
 }
 
 .form-container {
-  align-content: center !important;
+  height: auto;
+  min-height: 94vh;
+}
+
+form span.score-submit-notify,form span.input-label {
+  float: left;
+  color: #fff;
+}
+
+span.score-submit-notify {
+  width: 100%;
+  font-size: 9vw;
+  color: #fff;
+  font-family: 'Francois One';
+  margin-bottom: 20px;
+}
+
+span#final-score {
+  font-size: 16vw;
+  font-family: 'Archivo Black'
 }
 
 form {
   width: 100%;
   font-family: 'Francois One';
-}
-
-form span {
-  float: left;
-  color: #fff;
+  font-size: 4vw;
 }
 
 form input {
@@ -240,7 +255,7 @@ form input {
   outline: none;
   text-align: center;
   font-family: 'Francois One';
-  font-size: 28px;
+  font-size: 8vw;
 }
 
 form input[type="submit"] {
@@ -250,9 +265,13 @@ form input[type="submit"] {
   color: #fff;
 }
 
-form a {
+form span.form-help-links {
   text-align: center;
   text-decoration: none;
   color: #fff;
   margin-left: 20px;
+}
+
+.hidden {
+  display: none;
 }

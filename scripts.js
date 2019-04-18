@@ -7,30 +7,15 @@ var playable = false;
 var gameOver = false;
 
 $(document).ready(function() {
-  var loginForm = $("#login-form");
-  var registerForm = $("#register-form");
-  $(".form-container").hide();
-  registerForm.hide();
-
-  $("#register-link").on("click",function(){
-    loginForm.hide();
-    registerForm.show();
-  });
-
-  $("#login-link").on("click",function(){
-    registerForm.hide();
-    loginForm.show();
-  });
-
-
   var burnButton = $("#burn-toast");
   var scoreText = $("#sub-count");
   var toasty = $("#speed4");
   var speedGaugeBars = $(".speed-gauge-bar");
+
   $("#start").on("click",function(){
     score = 0;
     $("#sub-count").html("");
-    $(".cover-game").hide();
+    $(".cover-game").addClass("hidden");
     setTimeout(function(){
       $("#toast-slice,#toaster").addClass("toasting");
     },1100);
@@ -42,7 +27,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 30;
+        timeLeft = 5;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -53,6 +38,7 @@ $(document).ready(function() {
       }
     }
   });
+
   $("#burn-toast").on("click",function(){
     if(playable){
       totalClicks++;
@@ -60,6 +46,20 @@ $(document).ready(function() {
       showClickSpeed(totalClicks);
       animateScore(burnButton,scoreText,toasty);
     }
+  });
+
+  var loginForm = $("#login-form");
+  var registerForm = $("#register-form");
+  registerForm.addClass("hidden");
+
+  $("#register-link").on("click",function(){
+    loginForm.addClass("hidden");
+    registerForm.removeClass("hidden");
+  });
+
+  $("#login-link").on("click",function(){
+    registerForm.addClass("hidden");
+    loginForm.removeClass("hidden");
   });
 });
 
@@ -162,10 +162,14 @@ function endGame(burnButton,scoreText,toasty,dim) {
   }
 
   setTimeout(function(){
-    timer.hide();
+    timer.addClass("hidden");
   },2000);
   setTimeout(function(){
     $("#toast-slice,#toaster").removeClass("toasting");
     $("#toaster").removeClass("toasting");
   },2500);
+  setTimeout(function(){
+    $("#final-score").html(score);
+    $(".form-container").removeClass("hidden");
+  },4000);
 }
