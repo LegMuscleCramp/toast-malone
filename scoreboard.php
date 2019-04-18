@@ -20,7 +20,7 @@
       if ($result -> num_rows > 0) {
         // output data of each row
         while($row = $result -> fetch_assoc()) {
-          echo "User: " . $row["username"] . " - " . "Score: " . $row["score"]; // draw scoreboard table
+          echo "User: " . $row["username"] . " - " . "Score: " . $row["score"] . "<br>"; // draw scoreboard table.
         }
       }
       else{
