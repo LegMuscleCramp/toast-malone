@@ -27,7 +27,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 30;
+        timeLeft = 600;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -120,7 +120,7 @@ function showClickSpeed(clickGhost) {
     if(clickGhost==totalClicks) {
       $(".speed-gauge-bar").removeClass("lit-click-speed");
       $("#speed4").attr("src","img/toasty-multiplier.png");
-      $("#speed4 p").html("");
+      $("#multiplier").html("");
       clickSpeed=250;
     }
   },clickSpeed);

@@ -39,7 +39,7 @@ body {
   width: 90vw;
   height: 94vh;
   padding: 3vh 5vw;
-  background-color: #000B;
+  background-color: rgba(0,0,0,0.7);
   z-index: 5;
   position: absolute;
   top: 0;
@@ -142,6 +142,7 @@ body {
   height: 100px;
   margin-left: -32px;
   padding: 0 !important;
+  position: relative;
 }
 
 #speed4 img {
