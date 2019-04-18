@@ -17,7 +17,9 @@
     $pass=$_POST["pwd"];
 
     // grab score variable from JS
-    $_SESSION["score"] = "1000"; // NOTE: hardcoded score - grab it instead from JAVASCRIPT
+    $userScore = $_POST['score'];
+    $_SESSION['score'] = $userScore;
+    // $_SESSION["score"] = "1000"; //hardcoded score - grab it instead from JAVASCRIPT
 
     // check if username and password are correct
     $sql = "SELECT username FROM `fp_users` WHERE username='$user' AND password='$pass'";
@@ -28,8 +30,8 @@
       while($row = $result -> fetch_assoc()) {
         if ($user == $row["username"]){
           $_SESSION["user"] = $user;
+          header("Location: submit-score.php");
         }
-        header("Location: submit-score.php");
       }
     }
     else{
