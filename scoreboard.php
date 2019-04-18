@@ -20,12 +20,12 @@
       if ($result -> num_rows > 0) {
         // output data of each row
         while($row = $result -> fetch_assoc()) {
-          echo "User: " . $row["username"] . " - " . "Score: " . $row["score"];
-          // header("Location: submit-score.php");
+          echo "User: " . $row["username"] . " - " . "Score: " . $row["score"]; // draw scoreboard table
         }
       }
       else{
-        // header("refresh:2; url=index.html");
+        echo "No user data in the scoreboard.";
+        header("refresh:3; url=index.html"); // redirect to home
       }
       $conn->close();
     ?>
