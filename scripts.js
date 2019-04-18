@@ -171,5 +171,5 @@ function endGame(burnButton,scoreText,toasty,dim) {
   setTimeout(function(){
     $("#final-score").html(score);
     $(".form-container").removeClass("hidden");
-  },4000);
+  },4500);
 }
