@@ -8,13 +8,13 @@ var gameOver = false;
 
 $(document).ready(function() {
   var burnButton = $("#burn-toast");
-  var scoreText = $("#sub-count");
+  var scoreText = $("#user-score");
   var toasty = $("#speed4");
   var speedGaugeBars = $(".speed-gauge-bar");
 
   $("#start").on("click",function(){
     score = 0;
-    $("#sub-count").html("");
+    $("#user-score").html("");
     $(".cover-game").addClass("hidden");
     setTimeout(function(){
       $("#toast-slice,#toaster").addClass("toasting");
@@ -89,15 +89,15 @@ function showClickSpeed(clickGhost) {
   var clickGauge;
   var currentSpeed = clickSpeed/250;
   score = (currentSpeed<4) ? score+currentSpeed : score+10;
-  document.getElementById("sub-count").innerHTML = "+"+ score;
+  $("#user-score").html("+"+ score);
   console.log(score +"\t"+ currentSpeed);
-  var multiplier = document.getElementById("multiplier");
+  var multiplier = $("#multiplier");
   if(currentSpeed<4 && currentSpeed>1) {
-    multiplier.innerHTML = "x"+ currentSpeed;
+    multiplier.html("x"+ currentSpeed);
   } else if(currentSpeed<=1) {
-    multiplier.innerHTML = "";
+    multiplier.html("");
   } else {
-    multiplier.innerHTML = "x10";
+    multiplier.html("x10");
   }
   switch(true) {
     case (currentSpeed>=4):
