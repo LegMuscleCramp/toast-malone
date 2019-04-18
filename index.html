@@ -53,16 +53,27 @@
     <!-- user login form -->
     <div class="form-container">
       <form id="login-form" action="login.php" method="post">
-        username: <input type="text" name="username" required><br>
-        password: <input type="password" name="pwd" required><br>
+        <span>username</span><br>
+        <input type="text" name="username" required><br>
+        <span>password</span><br>
+        <input type="password" name="pwd" required>
+        <br>
         <input type="submit" value="Log in">
+        <br>
+        <a id="register-link" href="#">Register</a>
+        <a id="forgot-link" href="forgot.php">Forgot password?</a>
       </form>
-      <a href="register.html">Register</a>
-      <a href="forgot.php">Forgot password?</a>
       <form id="register-form" action="register.php" method="post">
-        security question: <input type="text" name="question" required><br>
-        answer: <input type="text" name="answer" required><br>
+        <span>username</span><br>
+        <input type="text" name="username" required><br>
+        <span>password</span><br>
+        <input type="password" name="password" required><br>
+        <span>security question</span><br>
+        <input type="text" name="question" required><br>
+        <span>security answer</span><br>
+        <input type="text" name="answer" required><br>
         <input type="submit" value="Register">
+        <a id="login-link" href="#">return to login</a>
       </form>
     </div>
   </body>
