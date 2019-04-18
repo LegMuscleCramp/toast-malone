@@ -166,6 +166,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
   setTimeout(function(){
     $("#toast-slice,#toaster").removeClass("toasting");
     $("#toaster").removeClass("toasting");
+    document.getElementById("boii").play();
   },2500);
   setTimeout(function(){
     $("#final-score").html(score);
