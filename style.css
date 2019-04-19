@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Francois+One');
+
+/* body size matches screen size exactly */
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #60caff;
+  display: inline;
+  overflow-x: hidden;
+  text-transform: uppercase;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* centers content with flexbox */
+.toast-container,.cover-game,.form-container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  width: 90vw;
+  height: 86vh;
+  padding: 3vh 5vw 11vh;
+}
+
+/* container for active game objects */
+.toast-container {
+  overflow-y: hidden;
+  position: fixed;
+}
+
+/* styling for game cover  */
+.cover-game,.form-container {
+  background-color: rgba(0,0,0,0.7);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.content-half {
+  width: 100%;
+}
+
+/* full width button */
+.big-button {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  line-height: 12vw;
+  padding: 12px;
+  border: none;
+  outline: none;
+}
+
+/* pre-determined color classes */
+.red {
+  background-color: #f00;
+}
+
+.red:hover {
+  background-color: #d00000 !important;
+}
+
+.green {
+  background-color: #00b533;
+}
+
+.green:hover {
+  background-color: #018927 !important;
+}
+
+/* large text styling */
+.big-text {
+  font-family: 'Archivo Black', sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 10vw;
+  text-transform: uppercase;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+.big-text-active {
+  transform: scale(1.5,1.5);
+}
+
+#multiplier {
+  text-transform: none !important;
+  position:absolute;
+  left: -15px;
+  right: 0;
+  top: 5px;
+  margin: 40px auto;
+  font-size: 32px;
+  color: #f00;
+}
+
+.click-speed-bar {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.speed-gauge {
+  width: 80%;
+  margin-top: 30px;
+}
+
+.speed-gauge-bar {
+  filter: brightness(.5);
+  padding: 20px;
+}
+
+#speed1 {
+  background-color: #e0c600;
+}
+
+#speed2 {
+  background-color: #e08200;
+}
+
+#speed3 {
+  background-color: #d80202;
+}
+
+#speed4 {
+  width: 100px;
+  height: 100px;
+  margin-left: -32px;
+  padding: 0 !important;
+  position: relative;
+}
+
+#speed4 img {
+  width: 100%;
+  height: 100%;
+}
+
+.lit-click-speed {
+  filter: brightness(1) !important;
+}
+
+.toasty-lit-click-speed {
+  transform: scale(1.3,1.3);
+}
+
+#toast-slice, #toaster {
+  width: 100%;
+  height: auto;
+}
+
+#toast-slice {
+  margin-bottom: -4vw;
+  transition: margin-bottom .2s;
+}
+
+#toast-slice.toasting {
+  margin-bottom: -27vw !important;
+  transition: margin-bottom 1s ease-out;
+}
+
+#toast-slice img {
+  width: 28%;
+}
+
+.light-toast {
+  filter: brightness(.95);
+}
+
+.dark-toast {
+  filter: brightness(.8);
+}
+
+.burnt-toast {
+  filter: brightness(.1);
+}
+
+#toaster {
+  margin-bottom: 50px;
+  filter: brightness(1);
+}
+
+#toaster img {
+  width: 50%;
+}
+
+#toaster::after {
+  content: "";
+  width: 4vw;
+  height: 3vw;
+  background-color: #000;
+  margin: 4vw 0 0 0;
+  border-radius: 0 50% 50% 0;
+  position: absolute;
+  transition: margin .2s;
+}
+
+#toaster.toasting::after {
+  margin: 24vw 0 0 0 !important;
+  transition: margin 1s ease-out;
+}
+
+#start {
+  z-index: 6;
+}
+
+.toast-active {
+  background-color: #d00000 !important;
+  transform: translateY(2px)
+  rotateZ(-2deg)
+  scale(1.1,1.1);
+}
+
+.form-container {
+  height: auto;
+  min-height: 94vh;
+}
+
+form span.score-submit-notify,form span.input-label {
+  float: left;
+  color: #fff;
+}
+
+span.score-submit-notify {
+  width: 100%;
+  font-size: 9vw;
+  color: #fff;
+  font-family: 'Francois One';
+  margin-bottom: 20px;
+}
+
+span#final-score {
+  font-size: 16vw;
+  font-family: 'Archivo Black'
+}
+
+form {
+  width: 100%;
+  font-family: 'Francois One';
+  font-size: 4vw;
+}
+
+form input {
+  border-radius: 15px;
+  border: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: calc(100% - 40px);
+  outline: none;
+  text-align: center;
+  font-family: 'Francois One';
+  font-size: 8vw;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  text-transform: uppercase;
+  background-color: #4286f4;
+  color: #fff;
+}
+
+form span.form-help-links {
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (min-width: 769px) {
+  /* container for active game objects */
+  .toast-container {
+    width: 40vw;
+    height: 90vh;
+    margin: 5vh auto;
+  }
+
+  /* styling for game cover  */
+  .cover-game,.form-container {
+    width: 40vw;
+    height: 90vh;
+    padding: 5vh 30vw;
+  }
+
+  .big-text {
+    font-size: 5vh;
+  }
+
+  /* full width button */
+  .big-button {
+    width: 50%;
+    line-height: 7vh;
+    padding: 16px;
+  }
+
+  #toast-slice {
+    margin-bottom: -2vh;
+  }
+
+  #toast-slice.toasting {
+    margin-bottom: -17vh !important;
+  }
+
+  #toast-slice img {
+    width: 18%;
+  }
+
+  #toaster img {
+    width: 34%;
+  }
+
+  #toaster::after {
+    width: 2vh;
+    height: 1.5vh;
+    margin: 2vh 0 0 0;
+  }
+
+  #toaster.toasting::after {
+    margin: 15vh 0 0 0 !important;
+  }
+
+  .form-container {
+    min-height: 0;
+  }
+
+  span#final-score {
+    font-size: 8vh;
+    font-family: 'Archivo Black'
+  }
+
+  span.score-submit-notify {
+    width: 100%;
+    font-size: 4vh;
+    color: #fff;
+    font-family: 'Francois One';
+    margin-bottom: 20px;
+  }
+
+  form {
+    width: 100%;
+    font-family: 'Francois One';
+    font-size: 2vh;
+  }
+
+  form input {
+    border-radius: 15px;
+    border: none;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    outline: none;
+    text-align: center;
+    font-family: 'Francois One';
+    font-size: 3vh;
+  }
+
+  form input[type="submit"] {
+    width: 100%;
+    text-transform: uppercase;
+    background-color: #4286f4;
+    color: #fff;
+  }
+
+  form span.form-help-links {
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+  }
+}
