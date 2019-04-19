@@ -6,6 +6,22 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#login-submit").on("click",function(){
+          var score = $("#final-score").html();
+          var username = $("#login-username").val();
+          var password = $("#login-password").val();
+          $.post("login.php", {
+            score: score,
+            username: username,
+            password: password
+          }, function(data,status) {
+            console.log(data);
+          });
+        });
+      });
+    </script>
   </head>
   <body oncontextmenu="return false">
 
@@ -56,14 +72,14 @@
 
     <!-- user login form -->
     <div class="form-container hidden">
-      <form id="login-form" action="login.php" method="post">
+      <form id="login-form" method="post">
         <span id="final-score" class="score-submit-notify"></span>
         <span class="score-submit-notify">Sign in to submit your score!</span>
         <span class="input-label">username</span><br>
-        <input type="text" name="username" required><br>
+        <input id="login-username" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
-        <input type="password" name="pwd" required>
-        <input type="submit" value="sign in">
+        <input id="login-password"type="password" name="pwd" required>
+        <input id="login-submit" type="submit" value="sign in">
         <span id="register-link" class="form-help-links">Register</span>
         <span id="forgot-link" class="form-help-links">Forgot password?</span>
       </form>

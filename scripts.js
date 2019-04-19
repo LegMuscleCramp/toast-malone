@@ -185,12 +185,12 @@ function endGame(burnButton,scoreText,toasty,dim) {
 
   //send score to php file
   // $.post('login.php', {variable: score});
-  $.ajax({
-    type: 'POST',
-    url: 'login.php',
-    data: {'score':score},
-    success: function(response){
-      console.log('ya boiii');
-    }
-  });
+  // $.ajax({
+  //   type: 'POST',
+  //   url: 'login.php',
+  //   data: {'score':score},
+  //   success: function(response){
+  //     console.log('ya boiii');
+  //   }
+  // });
 }
