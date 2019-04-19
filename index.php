@@ -11,6 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
     <script type="text/javascript" src="ajax-login.js"></script>
+    <script type="text/javascript" src="ajax-register.js"></script>
+    <script type="text/javascript" src="ajax-forgot.js"></script>
   </head>
   <body oncontextmenu="return false">
 
