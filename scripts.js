@@ -184,7 +184,6 @@ function endGame(burnButton,scoreText,toasty,dim) {
   },4500);
 
   //send score to php file
-<<<<<<< HEAD
   // $.post('login.php', {variable: score});
   $.ajax({
     type: 'POST',
@@ -194,8 +193,4 @@ function endGame(burnButton,scoreText,toasty,dim) {
       console.log('ya boiii');
     }
   });
-
-=======
-  $.post('submit-score.php', {variable: score});
->>>>>>> c8123d420a957293081656c17a67719f48be025b
 }
