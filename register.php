@@ -13,15 +13,39 @@
   $password = $_POST['password'];
   $securityQuestion = $_POST['question'];
   $securityAnswer = $_POST['answer'];
-  $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
-    VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
 
-  if ($conn->query($sql) == TRUE) {
-      header("Location: login.php"); //redirect user to login page
-      exit();
-  } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+  // check if username is taken
+  $userTaken = FALSE;
+  $sql = "SELECT username FROM user";
+  $result = $conn -> query($sql);
+  if ($result -> num_rows > 0) {
+    $userTaken = TRUE;
+    echo "username already exists";
+    exit();
   }
+  // if username valid, post to db
+  if (!$userTaken) {
+    $sql = "INSERT INTO `fp_users` (username, password, securityQuestion, securityAnswer)
+      VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
+    if ($conn -> query($sql) == TRUE) {
+        echo "New record created successfully <br>";
+        // header("Location: login.php"); //redirect user to login page
+        exit();
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn -> error;
+    }
+  }
+
+
+  // $sql = "INSERT INTO  `fp_users` (username, password, securityQuestion, securityAnswer)
+  //   VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
+  //
+  // if ($conn->query($sql) == TRUE) {
+  //     header("Location: login.php"); //redirect user to login page
+  //     exit();
+  // } else {
+  //     echo "Error: " . $sql . "<br>" . $conn->error;
+  // }
   $conn->close();
   ?>
 
