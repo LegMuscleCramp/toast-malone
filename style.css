@@ -77,6 +77,14 @@ body {
   background-color: #018927 !important;
 }
 
+.blue {
+  background-color: #4286f4;
+}
+
+.blue:active {
+  background-color: #3773d3;
+}
+
 /* large text styling */
 .big-text {
   font-family: 'Archivo Black', sans-serif;
@@ -229,7 +237,7 @@ body {
   min-height: 94vh;
 }
 
-form span.score-submit-notify,form span.input-label {
+div.each-form span.score-submit-notify,div.each-form span.input-label {
   float: left;
   color: #fff;
 }
@@ -247,32 +255,30 @@ span#final-score {
   font-family: 'Archivo Black'
 }
 
-form {
+div.each-form {
   width: 100%;
   font-family: 'Francois One';
   font-size: 4vw;
 }
 
-form input {
+div.each-form input, div.each-form button.submit-button {
   border-radius: 15px;
   border: none;
   padding: 20px;
   margin-bottom: 20px;
-  width: calc(100% - 40px);
+  width: 100%;
   outline: none;
   text-align: center;
   font-family: 'Francois One';
   font-size: 8vw;
 }
 
-form input[type="submit"] {
-  width: 100%;
+div.each-form button.submit-button {
   text-transform: uppercase;
-  background-color: #4286f4;
   color: #fff;
 }
 
-form span.form-help-links {
+div.each-form span.form-help-links {
   text-align: center;
   text-decoration: none;
   color: #fff;
@@ -334,46 +340,19 @@ form span.form-help-links {
 
   span#final-score {
     font-size: 8vh;
-    font-family: 'Archivo Black'
   }
 
   span.score-submit-notify {
-    width: 100%;
     font-size: 4vh;
-    color: #fff;
-    font-family: 'Francois One';
-    margin-bottom: 20px;
   }
 
-  form {
+  div.each-form {
     width: 100%;
     font-family: 'Francois One';
     font-size: 2vh;
   }
 
-  form input {
-    border-radius: 15px;
-    border: none;
-    padding: 20px;
-    margin-bottom: 20px;
-    width: calc(100% - 40px);
-    outline: none;
-    text-align: center;
-    font-family: 'Francois One';
+  div.each-form input,div.each-form button.submit-button {
     font-size: 3vh;
-  }
-
-  form input[type="submit"] {
-    width: 100%;
-    text-transform: uppercase;
-    background-color: #4286f4;
-    color: #fff;
-  }
-
-  form span.form-help-links {
-    text-align: center;
-    text-decoration: none;
-    color: #fff;
-    margin-left: 20px;
   }
 }

@@ -13,14 +13,15 @@
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
+
     if(isset($_POST["username"])) {
       $user=$_POST["username"];
       $pass=$_POST["password"];
       $score=$_POST["score"];
 
-      // // grab score variable from JS
+      // grab score variable from JS
       $_SESSION['score'] = $score;
-      // // $_SESSION["score"] = "1000"; //hardcoded score - grab it instead from JAVASCRIPT
+      // $_SESSION["score"] = "1000"; //hardcoded score - grab it instead from JAVASCRIPT
 
       // check if username and password are correct
       $sql = "SELECT username FROM `fp_users` WHERE username='$user' AND password='$pass'";
@@ -29,17 +30,16 @@
       if ($result -> num_rows > 0) {
         // output data of each row
         while($row = $result -> fetch_assoc()) {
-          if ($user == $row["username"]){
-            $_SESSION["user"] = $user;
-            header("Location: submit-score.php");
-          }
+          $_SESSION["user"] = $user;
+          $_SESSION["score"] = $score;
+          echo "welcome $user";
+          // header("Location: submit-score.php");
         }
-      }
-      else{
-        echo "Incorrect password. Try again."; // redirect back to login form...
+      } else {
+        echo "user/pass mismatch"; // redirect back to login form...
         // header("refresh:2; url=index.html");
       }
-
+      exit();
       $conn -> close();
     }
   ?>

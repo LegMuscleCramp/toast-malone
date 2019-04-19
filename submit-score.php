@@ -15,12 +15,14 @@
       }
       // get user score and username
       $username = $_SESSION['user'];
+      // $score = $_POST['variable'];
+      // $_SESSION['score'] = $score;
       $score = $_SESSION['score'];
 
       // post to DB
       $sql = "INSERT INTO fp_highScores (username, score) VALUES ('$username', '$score')";
       if ($conn->query($sql) == TRUE) {
-          // header("Location: scoreboard.php");
+          header("Location: scoreboard.php");
           exit();
       } else {
           echo "Error: " . $sql . "<br>" . $conn->error;

@@ -1,3 +1,7 @@
+<?php
+  include("config.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -6,23 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts.js"></script>
-    <script>
-      $(document).ready(function(){
-        $("#login-submit").on("click",function(){
-          var score = $("#final-score").html();
-          var username = $("#login-username").val();
-          var password = $("#login-password").val();
-          $.post("login.php", {
-            'score': score,
-            'username': username,
-            'password': password
-          },
-          function(data,status) {
-            console.log(data);
-          });
-        });
-      });
-    </script>
+    <script type="text/javascript" src="ajax-login.js"></script>
   </head>
   <body oncontextmenu="return false">
 
@@ -73,18 +61,18 @@
 
     <!-- user login form -->
     <div class="form-container hidden">
-      <form id="login-form" action="scoreboard.php" method="post">
-        <span id="final-score" class="score-submit-notify"></span>
-        <span class="score-submit-notify">Sign in to submit your score!</span>
+      <div id="login-form" class="each-form">
+        <span id="final-score" class="score-submit-notify"></span><br>
+        <span id="login-alert" class="score-submit-notify">Sign in to submit your score!</span>
         <span class="input-label">username</span><br>
         <input id="login-username" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
         <input id="login-password"type="password" name="pwd" required>
-        <input id="login-submit" type="submit" value="sign in">
+        <button id="login-submit" value="sign in" class="submit-button blue">sign in</button>
         <span id="register-link" class="form-help-links">Register</span>
         <span id="forgot-link" class="form-help-links">Forgot password?</span>
-      </form>
-      <form id="register-form" action="register.php" method="post">
+      </div>
+      <div id="register-form" class="each-form">
         <span class="input-label">username</span><br>
         <input type="text" name="username" required><br>
         <span class="input-label">password</span><br>
@@ -93,19 +81,19 @@
         <input type="text" name="question" required><br>
         <span class="input-label">security answer</span><br>
         <input type="text" name="answer" required><br>
-        <input type="submit" value="Register">
+        <button id="register-submit" value="register" class="submit-button blue">register</button>
         <span id="login-link" class="form-help-links">return to login</span>
-      </form>
-      <form id="forgot-form" action="retrieve.php" method="post">
+      </div>
+      <div id="forgot-form" class="each-form">
         <span class="input-label">username</span><br>
         <input type="text" name="username" required><br>
         <span class="input-label">security question</span><br>
         <input type="text" name="question" required><br>
         <span class="input-label">security answer</span><br>
         <input type="text" name="answer" required><br>
-        <input type="submit" value="Submit">
+        <button id="forgot-submit" value="submit" class="submit-button blue">submit</button>
         <span id="login-link2" class="form-help-links">return to login</span>
-      </form>
+      </div>
     </div>
   </body>
 </html>

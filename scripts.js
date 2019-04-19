@@ -12,7 +12,7 @@ $(document).ready(function() {
   var toasty = $("#speed4");
   var speedGaugeBars = $(".speed-gauge-bar");
 
-  $("#start").on("click",function(){
+  $("#start").on("click",function() {
     score = 0;
     $("#user-score").html("");
     $(".cover-game").addClass("hidden");
@@ -27,7 +27,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 30;
+        timeLeft = 1;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -152,7 +152,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
   dim.removeClass("lit-click-speed");
   scoreText.removeClass("big-text-active");
   toasty.removeClass("toasty-lit-click-speed");
-  toasty.attr("src","img/toasty-multiplier.png");
+  toasty.children("img").attr("src","img/toasty-multiplier.png");
   var timer = $("#timer");
   timer.html("time's up");
   timer.attr("style","z-index:6");
@@ -182,15 +182,4 @@ function endGame(burnButton,scoreText,toasty,dim) {
     $("#final-score").html(score);
     $(".form-container").removeClass("hidden");
   },4500);
-
-  //send score to php file
-  // $.post('login.php', {variable: score});
-  // $.ajax({
-  //   type: 'POST',
-  //   url: 'login.php',
-  //   data: {'score':score},
-  //   success: function(response){
-  //     console.log('ya boiii');
-  //   }
-  // });
 }
