@@ -284,15 +284,8 @@ form span.form-help-links {
 }
 
 @media only screen and (min-width: 769px) {
-  /* container for active game objects */
-  .toast-container {
-    width: 40vw;
-    height: 90vh;
-    margin: 5vh auto;
-  }
-
-  /* styling for game cover  */
-  .cover-game,.form-container {
+  /* styling for containers */
+  .toast-container,.cover-game,.form-container {
     width: 40vw;
     height: 90vh;
     padding: 5vh 30vw;
