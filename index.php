@@ -13,10 +13,11 @@
           var username = $("#login-username").val();
           var password = $("#login-password").val();
           $.post("login.php", {
-            score: score,
-            username: username,
-            password: password
-          }, function(data,status) {
+            'score': score,
+            'username': username,
+            'password': password
+          },
+          function(data,status) {
             console.log(data);
           });
         });
@@ -72,7 +73,7 @@
 
     <!-- user login form -->
     <div class="form-container hidden">
-      <form id="login-form" method="post">
+      <form id="login-form" action="scoreboard.php" method="post">
         <span id="final-score" class="score-submit-notify"></span>
         <span class="score-submit-notify">Sign in to submit your score!</span>
         <span class="input-label">username</span><br>
