@@ -13,6 +13,9 @@
     <script type="text/javascript" src="ajax-login.js"></script>
     <script type="text/javascript" src="ajax-register.js"></script>
     <script type="text/javascript" src="ajax-forgot.js"></script>
+    <script type="text/javascript" src="ajax-username-exists.js"></script>
+    <script type="text/javascript" src="ajax-retrieve.js"></script>
+    <script type="text/javascript" src="ajax-validate-form.js"></script>
   </head>
   <body oncontextmenu="return false">
 
@@ -67,34 +70,43 @@
         <span id="final-score" class="score-submit-notify"></span><br>
         <span id="login-alert" class="score-submit-notify">Sign in to submit your score!</span>
         <span class="input-label">username</span><br>
-        <input id="login-username" type="text" name="username" required><br>
+        <input id="login-username" class="form-field" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
-        <input id="login-password"type="password" name="pwd" required>
-        <button id="login-submit" value="sign in" class="submit-button blue">sign in</button>
+        <input id="login-password" class="form-field" type="password" name="pwd" required>
+        <button id="login-submit" value="sign in" class="form-field submit-button blue">sign in</button>
         <span id="register-link" class="form-help-links">Register</span>
         <span id="forgot-link" class="form-help-links">Forgot password?</span>
       </div>
       <div id="register-form" class="each-form">
-        <span class="input-label">username</span><br>
-        <input id="register-username" type="text" name="username" required><br>
+        <span id="register-username-label" class="input-label">username</span><br>
+        <input id="register-username" class="form-field" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
-        <input id="register-password" type="password" name="password" required><br>
+        <input id="register-password" class="form-field" type="password" name="password" required><br>
         <span class="input-label">security question</span><br>
-        <input id="register-question" type="text" name="question" required><br>
+        <input id="register-question" class="form-field" type="text" name="question" required><br>
         <span class="input-label">security answer</span><br>
-        <input id="register-answer" type="text" name="answer" required><br>
-        <button id="register-submit" value="register" class="submit-button blue">register</button>
-        <span id="login-link" class="form-help-links">return to login</span>
+        <input id="register-answer" class="form-field" type="text" name="answer" required><br>
+        <button id="register-submit" value="register" class="form-field submit-button blue">register</button>
+        <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="forgot-form" class="each-form">
         <span class="input-label">username</span><br>
-        <input id="forgot-username" type="text" name="username" required><br>
+        <input id="forgot-username" class="form-field" type="text" name="username" required><br>
+        <button id="forgot-submit" value="submit" class="submit-button blue form-field">submit</button>
+        <span class="form-help-links login-link">return to login</span>
+      </div>
+      <div id="retrieve-form" class="each-form">
         <span class="input-label">security question</span><br>
-        <input id="forgot-question" type="text" name="question" required><br>
+        <span id="retrieve-question" class="score-submit-notify"></span><br>
         <span class="input-label">security answer</span><br>
-        <input id="forgot-answer" type="text" name="answer" required><br>
-        <button id="forgot-submit" value="submit" class="submit-button blue">submit</button>
-        <span id="login-link2" class="form-help-links">return to login</span>
+        <input id="retrieve-answer" class="form-field" type="text" name="answer" required><br>
+        <button id="retrieve-submit" value="submit" class="submit-button blue form-field">submit</button>
+        <span class="form-help-links login-link">return to login</span>
+      </div>
+      <span id="retrieve-password" class="score-submit-notify hidden"></span>
+      <div class="submit-score-form">
+
+
       </div>
     </div>
   </body>

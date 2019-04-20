@@ -2,16 +2,16 @@
 $(document).ready(function() {
   $("#forgot-submit").on("click",function(){
     var forgotUsername = $("#forgot-username").val();
-    var forgotQuestion = $("#forgot-question").val();
-    var forgotAnswer = $("#forgot-answer").val();
-    // var finalScore = $("#final-score").html();
-    $.post("retrieve.php",{
-      username: forgotUsername,
-      question: forgotQuestion,
-      answer: forgotAnswer
+    $.post("forgot.php",{
+      username: forgotUsername
     }, function(data,status) {
-      // $("#login-alert").html(data);
-      console.log(data);
+      if(data=="fail") {
+        alert("username doesn't exist");
+      } else {
+        $("#login-form,#register-form,#forgot-form").addClass("hidden");
+        $("#retrieve-question").html(data);
+        $("#retrieve-form").removeClass("hidden");
+      }
     });
   });
 });

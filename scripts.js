@@ -51,24 +51,29 @@ $(document).ready(function() {
   var loginForm = $("#login-form");
   var registerForm = $("#register-form");
   var forgotForm = $("#forgot-form");
+  var retrieveForm = $("#retrieve-form");
   registerForm.addClass("hidden");
   forgotForm.addClass("hidden");
+  retrieveForm.addClass("hidden");
 
   $("#register-link").on("click",function(){
     loginForm.addClass("hidden");
     forgotForm.addClass("hidden");
+    retrieveForm.addClass("hidden");
     registerForm.removeClass("hidden");
   });
 
-  $("#login-link,#login-link2").on("click",function(){
+  $(".login-link").on("click",function(){
     registerForm.addClass("hidden");
     forgotForm.addClass("hidden");
+    retrieveForm.addClass("hidden");
     loginForm.removeClass("hidden");
   });
 
   $("#forgot-link").on("click",function(){
     loginForm.addClass("hidden");
     registerForm.addClass("hidden");
+    retrieveForm.addClass("hidden");
     forgotForm.removeClass("hidden");
   });
 });

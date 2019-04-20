@@ -1,4 +1,5 @@
 <?php
+  session_start();
   include("config.php");
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -8,18 +9,9 @@
   $securityQuestion = $_POST['question'];
   $securityAnswer = $_POST['answer'];
 
-  // check if username is taken
-  $userTaken = FALSE;
-  $sql = "SELECT username FROM user WHERE username='$username'";
-  $result = $conn -> query($sql);
-  if ($result -> num_rows > 0) {
-    $userTaken = TRUE;
-    echo "username already exists";
-    exit();
-  }
 
   // if username valid, post to db
-  if (!$userTaken) {
+  if (!$_SESSION['userTaken']) {
     $sql = "INSERT INTO `fp_users` (username, password, securityQuestion, securityAnswer)
     VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
     if ($conn -> query($sql) == TRUE) {
@@ -28,7 +20,10 @@
       exit();
     } else {
       echo "Error: " . $sql . "<br>" . $conn -> error;
+      exit();
     }
+  } else {
+    echo "I already told you the name was taken";
   }
   $conn->close();
 ?>

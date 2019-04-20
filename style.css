@@ -261,7 +261,7 @@ div.each-form {
   font-size: 4vw;
 }
 
-div.each-form input, div.each-form button.submit-button {
+div.each-form .form-field{
   border-radius: 15px;
   border: none;
   padding: 20px;
@@ -283,6 +283,14 @@ div.each-form span.form-help-links {
   text-decoration: none;
   color: #fff;
   margin-left: 20px;
+}
+
+input.input-error {
+  border: 2px solid #f00 !important;
+}
+
+span.input-error {
+  color: #f00 !important;
 }
 
 .hidden {
@@ -354,7 +362,7 @@ div.each-form span.form-help-links {
     font-size: 2vh;
   }
 
-  div.each-form input,div.each-form button.submit-button {
+  div.each-form .form-field {
     font-size: 3vh;
   }
 }
