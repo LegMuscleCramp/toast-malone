@@ -289,7 +289,7 @@ div.each-form span.form-help-links {
   display: none;
 }
 
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 600px) {
   /* styling for containers */
   .toast-container,.cover-game,.form-container {
     width: 40vw;
@@ -303,7 +303,7 @@ div.each-form span.form-help-links {
 
   /* full width button */
   .big-button {
-    width: 50%;
+    max-width: 350px;
     line-height: 7vh;
     padding: 16px;
   }
@@ -317,11 +317,13 @@ div.each-form span.form-help-links {
   }
 
   #toast-slice img {
-    width: 18%;
+    width: 38%;
+    max-width: 140px;
   }
 
   #toaster img {
-    width: 34%;
+    width: 70%;
+    max-width: 250px;
   }
 
   #toaster::after {
