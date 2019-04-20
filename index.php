@@ -75,23 +75,23 @@
       </div>
       <div id="register-form" class="each-form">
         <span class="input-label">username</span><br>
-        <input type="text" name="username" required><br>
+        <input id="register-username" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
-        <input type="password" name="password" required><br>
+        <input id="register-password" type="password" name="password" required><br>
         <span class="input-label">security question</span><br>
-        <input type="text" name="question" required><br>
+        <input id="register-question" type="text" name="question" required><br>
         <span class="input-label">security answer</span><br>
-        <input type="text" name="answer" required><br>
+        <input id="register-answer" type="text" name="answer" required><br>
         <button id="register-submit" value="register" class="submit-button blue">register</button>
         <span id="login-link" class="form-help-links">return to login</span>
       </div>
       <div id="forgot-form" class="each-form">
         <span class="input-label">username</span><br>
-        <input type="text" name="username" required><br>
+        <input id="forgot-username" type="text" name="username" required><br>
         <span class="input-label">security question</span><br>
-        <input type="text" name="question" required><br>
+        <input id="forgot-question" type="text" name="question" required><br>
         <span class="input-label">security answer</span><br>
-        <input type="text" name="answer" required><br>
+        <input id="forgot-answer" type="text" name="answer" required><br>
         <button id="forgot-submit" value="submit" class="submit-button blue">submit</button>
         <span id="login-link2" class="form-help-links">return to login</span>
       </div>
