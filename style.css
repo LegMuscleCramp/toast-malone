@@ -66,7 +66,7 @@ body {
 }
 
 .red:hover {
-  background-color: #d00000 !important;
+  cursor: pointer;
 }
 
 .green {
@@ -74,11 +74,15 @@ body {
 }
 
 .green:hover {
-  background-color: #018927 !important;
+  cursor: pointer;
 }
 
 .blue {
   background-color: #4286f4;
+}
+
+.blue:hover {
+  cursor: pointer;
 }
 
 .blue:active {
@@ -233,16 +237,18 @@ body {
 }
 
 .form-container {
+  font-family: 'Francois One';
+  font-size: 4vw;
   height: auto;
   min-height: 94vh;
 }
 
-div.each-form span.score-submit-notify,div.each-form span.input-label {
+div.each-form span.form-notify,div.each-form span.input-label {
   float: left;
   color: #fff;
 }
 
-span.score-submit-notify {
+span.form-notify {
   width: 100%;
   font-size: 9vw;
   color: #fff;
@@ -250,18 +256,21 @@ span.score-submit-notify {
   margin-bottom: 20px;
 }
 
-span#final-score {
-  font-size: 16vw;
+#login-form .final-score {
+  font-size: 12vw !important;
+  font-family: 'Archivo Black'
+}
+
+#submit-score-form .final-score {
+  font-size: 32vw !important;
   font-family: 'Archivo Black'
 }
 
 div.each-form {
   width: 100%;
-  font-family: 'Francois One';
-  font-size: 4vw;
 }
 
-div.each-form .form-field{
+.form-field{
   border-radius: 15px;
   border: none;
   padding: 20px;
@@ -273,24 +282,32 @@ div.each-form .form-field{
   font-size: 8vw;
 }
 
-div.each-form button.submit-button {
+button.submit-button {
   text-transform: uppercase;
   color: #fff;
 }
 
-div.each-form span.form-help-links {
+span.form-help-links {
   text-align: center;
   text-decoration: none;
   color: #fff;
   margin-left: 20px;
 }
 
-input.input-error {
-  border: 2px solid #f00 !important;
+span.form-help-links:hover {
+  cursor: pointer;
+}
+
+#registration-confirmation {
+  cursor: default !important;
 }
 
 span.input-error {
   color: #f00 !important;
+}
+
+input.input-error {
+  border: 2px solid #f00 !important;
 }
 
 .hidden {
@@ -345,24 +362,30 @@ span.input-error {
   }
 
   .form-container {
+    font-family: 'Francois One';
+    font-size: 2vh;
     min-height: 0;
   }
 
-  span#final-score {
-    font-size: 8vh;
-  }
-
-  span.score-submit-notify {
+  span.form-notify {
     font-size: 4vh;
   }
 
   div.each-form {
     width: 100%;
-    font-family: 'Francois One';
-    font-size: 2vh;
   }
 
-  div.each-form .form-field {
+  .form-field {
     font-size: 3vh;
+  }
+
+  #login-form .final-score {
+    font-size: 12vh !important;
+    font-family: 'Archivo Black'
+  }
+
+  #submit-score-form .final-score {
+    font-size: 20vh !important;
+    font-family: 'Archivo Black'
   }
 }

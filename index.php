@@ -8,13 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts.js"></script>
-    <script type="text/javascript" src="ajax-login.js"></script>
-    <script type="text/javascript" src="ajax-register.js"></script>
-    <script type="text/javascript" src="ajax-forgot.js"></script>
-    <script type="text/javascript" src="ajax-username-exists.js"></script>
-    <script type="text/javascript" src="ajax-retrieve.js"></script>
-    <script type="text/javascript" src="ajax-validate-form.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/form-toggling.js"></script>
+    <script type="text/javascript" src="js/ajax-login.js"></script>
+    <script type="text/javascript" src="js/ajax-submit-score.js"></script>
+    <script type="text/javascript" src="js/ajax-register.js"></script>
+    <script type="text/javascript" src="js/ajax-forgot.js"></script>
+    <script type="text/javascript" src="js/ajax-retrieve.js"></script>
+    <script type="text/javascript" src="js/ajax-validate-form.js"></script>
   </head>
   <body oncontextmenu="return false">
 
@@ -51,7 +52,7 @@
     </div>
     <div class="cover-game">
       <div class="top-content">
-        <span id="rules" class="big-text">the rules are simple: mash the 'burn toast' button. ready?</span>
+        <span id="rules" class="form-notify">the rules are simple: mash the 'toast malone' button. ready?</span>
         <br>
         <button id="start" class="big-button green">
           <span class="big-text">start</span>
@@ -63,11 +64,11 @@
       Your browser does not support the audio element.
     </audio>
 
-    <!-- user login form -->
+    <!-- forms container -->
     <div class="form-container hidden">
       <div id="login-form" class="each-form">
-        <span id="final-score" class="score-submit-notify"></span><br>
-        <span id="login-alert" class="score-submit-notify">Sign in to submit your score!</span>
+        <span class="final-score form-notify"></span><br>
+        <span id="login-alert" class="form-notify">Sign in to submit your score!</span>
         <span class="input-label">username</span><br>
         <input id="login-username" class="form-field" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
@@ -75,6 +76,11 @@
         <button id="login-submit" value="sign in" class="form-field submit-button blue">sign in</button>
         <span id="register-link" class="form-help-links">Register</span>
         <span id="forgot-link" class="form-help-links">Forgot password?</span>
+      </div>
+      <div id="submit-score-form">
+        <span id="welcome-message" class="form-notify"></span><br><br>
+        <span id="final-score" class="final-score form-notify"></span><br>
+        <button id="submit-score" value="submit score" class="form-field submit-button blue">submit score</button>
       </div>
       <div id="register-form" class="each-form">
         <span id="register-username-label" class="input-label">username</span><br>
@@ -86,26 +92,26 @@
         <span class="input-label">security answer</span><br>
         <input id="register-answer" class="form-field" type="text" name="answer" required><br>
         <button id="register-submit" value="register" class="form-field submit-button blue">register</button>
+        <span id="registration-confirmation" class="form-help-links"></span><br><br>
         <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="forgot-form" class="each-form">
-        <span class="input-label">username</span><br>
+        <span id="forgot-username-label" class="input-label">username</span><br>
         <input id="forgot-username" class="form-field" type="text" name="username" required><br>
         <button id="forgot-submit" value="submit" class="submit-button blue form-field">submit</button>
         <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="retrieve-form" class="each-form">
         <span class="input-label">security question</span><br>
-        <span id="retrieve-question" class="score-submit-notify"></span><br>
-        <span class="input-label">security answer</span><br>
+        <span id="retrieve-question" class="form-notify"></span><br>
+        <span id="retrieve-answer-label" class="input-label">security answer</span><br>
         <input id="retrieve-answer" class="form-field" type="text" name="answer" required><br>
         <button id="retrieve-submit" value="submit" class="submit-button blue form-field">submit</button>
         <span class="form-help-links login-link">return to login</span>
       </div>
-      <span id="retrieve-password" class="score-submit-notify hidden"></span>
-      <div class="submit-score-form">
-
-
+      <div id="show-password-container">
+        <span id="show-password" class="form-notify"></span><br><br><br>
+        <span class="form-help-links login-link">return to login</span>
       </div>
     </div>
   </body>

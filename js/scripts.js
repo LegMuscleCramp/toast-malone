@@ -20,14 +20,15 @@ $(document).ready(function() {
       $("#toast-slice,#toaster").addClass("toasting");
     },1100);
     var timerId = setInterval(countdown, 1000);
-    timeLeft = 3;
+    timeLeft = 0; // change this back at the end
     var timerDisplay = $("#timer");
+    timerDisplay.html("ready?");
 
     // pre-game countdown and game duration
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 1;
+        timeLeft = 1; // change this back at the end
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -46,35 +47,6 @@ $(document).ready(function() {
       showClickSpeed(totalClicks);
       animateScore(burnButton,scoreText,toasty);
     }
-  });
-
-  var loginForm = $("#login-form");
-  var registerForm = $("#register-form");
-  var forgotForm = $("#forgot-form");
-  var retrieveForm = $("#retrieve-form");
-  registerForm.addClass("hidden");
-  forgotForm.addClass("hidden");
-  retrieveForm.addClass("hidden");
-
-  $("#register-link").on("click",function(){
-    loginForm.addClass("hidden");
-    forgotForm.addClass("hidden");
-    retrieveForm.addClass("hidden");
-    registerForm.removeClass("hidden");
-  });
-
-  $(".login-link").on("click",function(){
-    registerForm.addClass("hidden");
-    forgotForm.addClass("hidden");
-    retrieveForm.addClass("hidden");
-    loginForm.removeClass("hidden");
-  });
-
-  $("#forgot-link").on("click",function(){
-    loginForm.addClass("hidden");
-    registerForm.addClass("hidden");
-    retrieveForm.addClass("hidden");
-    forgotForm.removeClass("hidden");
   });
 });
 
@@ -95,7 +67,6 @@ function showClickSpeed(clickGhost) {
   var currentSpeed = clickSpeed/250;
   score = (currentSpeed<4) ? score+currentSpeed : score+10;
   $("#user-score").html("+"+ score);
-  console.log(score +"\t"+ currentSpeed);
   var multiplier = $("#multiplier");
   if(currentSpeed<4 && currentSpeed>1) {
     multiplier.html("x"+ currentSpeed);
@@ -184,7 +155,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
     document.getElementById("boii").play();
   },2500);
   setTimeout(function(){
-    $("#final-score").html(score);
+    $(".final-score").html(score);
     $(".form-container").removeClass("hidden");
   },4500);
 }

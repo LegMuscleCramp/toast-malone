@@ -17,11 +17,6 @@
     if(isset($_POST["username"])) {
       $user=$_POST["username"];
       $pass=$_POST["password"];
-      $score=$_POST["score"];
-
-      // grab score variable from JS
-      $_SESSION['score'] = $score;
-      // $_SESSION["score"] = "1000"; //hardcoded score - grab it instead from JAVASCRIPT
 
       // check if username and password are correct
       $sql = "SELECT username FROM `fp_users` WHERE username='$user' AND password='$pass'";
@@ -31,9 +26,7 @@
         // output data of each row
         while($row = $result -> fetch_assoc()) {
           $_SESSION["user"] = $user;
-          $_SESSION["score"] = $score;
           echo "welcome $user";
-          // header("Location: submit-score.php");
         }
       } else {
         echo "user/pass mismatch"; // redirect back to login form...

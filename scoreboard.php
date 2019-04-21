@@ -2,11 +2,6 @@
   session_start();
 ?>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title></title>
-  </head>
   <body>
     <?php
       include("config.php"); // for DB connection
@@ -25,7 +20,7 @@
       }
       else{
         echo "No user data in the scoreboard.";
-        header("refresh:3; url=index.html"); // redirect to home
+        // header("refresh:3; url=index.php"); // redirect to home
       }
       $conn->close();
     ?>

@@ -15,15 +15,12 @@
     $sql = "INSERT INTO `fp_users` (username, password, securityQuestion, securityAnswer)
     VALUES ('$username','$password','$securityQuestion','$securityAnswer')";
     if ($conn -> query($sql) == TRUE) {
-      echo "New record created successfully <br>";
-      // header("Location: login.php"); //redirect user to login page
+      echo "account created successfully";
       exit();
     } else {
-      echo "Error: " . $sql . "<br>" . $conn -> error;
+      echo "error: account could not be created";
       exit();
     }
-  } else {
-    echo "I already told you the name was taken";
   }
   $conn->close();
 ?>
