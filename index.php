@@ -7,6 +7,7 @@
     <title>Toast Malone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/form-toggling.js"></script>
@@ -18,6 +19,8 @@
     <script type="text/javascript" src="js/ajax-validate-form.js"></script>
   </head>
   <body oncontextmenu="return false">
+  <i id="logout-button" class="far fa-times-circle"></i>
+  <span class="logout-message hidden">logging out...</span>
 
     <!-- toast container -->
     <div class="toast-container">
@@ -81,6 +84,13 @@
         <span id="welcome-message" class="form-notify"></span><br><br>
         <span id="final-score" class="final-score form-notify"></span><br>
         <button id="submit-score" value="submit score" class="form-field submit-button blue">submit score</button>
+      </div>
+      <div id="show-score-container">
+        <div class="scoreboard-container">
+          <table id="scoreboard-table">
+          </table>
+        </div>
+        <span id="play-again-link" class="form-help-links">play again</span>
       </div>
       <div id="register-form" class="each-form">
         <span id="register-username-label" class="input-label">username</span><br>

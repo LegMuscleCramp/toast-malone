@@ -18,6 +18,23 @@ body {
   user-select: none;
 }
 
+#logout-button, .logout-message {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 20;
+  color: #f00;
+  font-size: 20px;
+}
+
+.logout-message {
+  font-family: 'Francois One';
+}
+
+#logout-button:hover {
+  cursor: pointer;
+}
+
 /* centers content with flexbox */
 .toast-container,.cover-game,.form-container {
   text-align: center;
@@ -310,8 +327,12 @@ input.input-error {
   border: 2px solid #f00 !important;
 }
 
+#show-password {
+  text-transform: none;
+}
+
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 @media only screen and (min-width: 600px) {

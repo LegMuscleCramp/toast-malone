@@ -15,6 +15,7 @@ $(document).ready(function() {
           usernameLabel.addClass("input-error");
           $("#forgot-username").addClass("input-error");
         } else {
+          $("#forgot-username").val("");
           $("#login-form,#register-form,#forgot-form").addClass("hidden");
           $("#retrieve-question").html(data);
           $("#retrieve-form").removeClass("hidden");

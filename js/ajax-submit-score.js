@@ -9,7 +9,12 @@ $(document).ready(function(){
         alert("error");
       }
       else {
-        alert("score "+ score +" submitted");
+        $("#submit-score-form").addClass("hidden");
+        $("#show-score-container").removeClass("hidden");
+
+        $.post("scoreboard.php",function(data,status){
+          $("#scoreboard-table").html(data);
+        });
       }
     });
   });

@@ -4,7 +4,7 @@
     if($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    $user = $_SESSION["username"];
+    $user = $_SESSION["forgot-username"];
     $question = $_SESSION["question"];
     $answer = $_POST["answer"];
     $sql = "SELECT `password` FROM `fp_users` WHERE username='$user' AND securityQuestion='$question' AND securityAnswer='$answer'";
@@ -12,6 +12,7 @@
     if ($result -> num_rows > 0) {
       while($row = $result -> fetch_assoc()) {
         echo $row['password'];
+        unset($_SESSION['forgot-username']);
         exit();
       }
     } else {

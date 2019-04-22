@@ -11,7 +11,7 @@
     $result = $conn -> query($sql);
     if ($result -> num_rows > 0) {
       while($row = $result -> fetch_assoc()) {
-        $_SESSION['username'] = $user;
+        $_SESSION['forgot-username'] = $user;
         $_SESSION['question'] = $row['securityQuestion'];
         echo $row['securityQuestion'];
         exit();

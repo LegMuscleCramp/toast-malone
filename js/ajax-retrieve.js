@@ -15,8 +15,9 @@ $(document).ready(function() {
           answerLabel.addClass("input-error");
           $("#retrieve-answer").addClass("input-error");
         } else {
+          $("#retrieve-answer").val("");
           $("#login-form,#register-form,#forgot-form,#retrieve-form").addClass("hidden");
-          $("#show-password").html("Your password is "+ data);
+          $("#show-password").html("YOUR PASSWORD IS "+ data);
           $("#show-password-container").removeClass("hidden");
         }
       });
