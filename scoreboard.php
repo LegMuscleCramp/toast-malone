@@ -8,20 +8,28 @@
   $sql = "SELECT username,score FROM fp_highScores ORDER BY score DESC LIMIT 10";
   $result = $conn -> query($sql);
   $scoresArray = array();
+  $userTopTen = false; // boolean to check if user is in top ten for scoreboard display
+  $user = $_SESSION['user'];
+  $score = $_SESSION['score'];
   if ($result -> num_rows > 0) {
     // output data of each row
     $i = 1;
     while($row = $result -> fetch_assoc()) {
-      // echo "User: " . $row["username"] . " - " . "Score: " . $row["score"] . "<br>";
-      echo "<tr><td>$i</td><td>" . $row['username'] . "</td><td>" . $row['score'] . "</td></tr>";
+      if ($row['username'] == $user && $row['score'] == $score) {
+        $userTopTen = true;
+      }
+      echo "<tr><td id='rank$i' class='leaderboard-rank'>$i</td><td class='leaderboard-name'>" . $row['username'] . "</td><td class='leaderboard-score'>" . $row['score'] . "</td></tr>";
       $i++;
-      // $scoresArray[] = $row;
     }
-    // echo json_encode($scoresArray);
   }
   else{
     echo "No user data in the scoreboard.";
-    // header("refresh:3; url=index.php"); // redirect to home
   }
+
+  // display user's score at bottom if not in top ten
+  if ($userTopTen == false) {
+    echo "<tr><td id='loser' class='leaderboard-rank'>L</td><td class='leaderboard-name'>" . $user . "</td><td class='leaderboard-score'>" . $score . "</td></tr>";
+  }
+
   $conn->close();
 ?>

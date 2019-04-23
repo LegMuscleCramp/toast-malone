@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  // initializing form variables
+  var loginForm = $("#login-form");
+  var submitScoreForm = $("#submit-score-form");
+  var registerForm = $("#register-form");
+  var forgotForm = $("#forgot-form");
+  var retrieveForm = $("#retrieve-form");
+  var showScore = $("#show-score-container");
+  var showPassword = $("#show-password-container");
+
   defaultFormToggle();
 
   // makes registration form visible and hides all other forms
@@ -40,7 +49,7 @@ $(document).ready(function(){
     $("#forgot-form").children().removeClass("input-error");
   });
 
-  $("#play-again-link").on("click",function(){
+  $(".play-again-link").on("click",function(){
     location.reload();
   });
 
@@ -54,23 +63,15 @@ $(document).ready(function(){
       },1000);
     });
   });
+  function defaultFormToggle(){
+    $("#logout-button").addClass("hidden");
+
+    // hiding all but registration form
+    submitScoreForm.addClass("hidden");
+    registerForm.addClass("hidden");
+    forgotForm.addClass("hidden");
+    retrieveForm.addClass("hidden");
+    showScore.addClass("hidden");
+    showPassword.addClass("hidden");
+  }
 });
-
-function defaultFormToggle(){
-  $("#logout-button").addClass("hidden");
-
-  // initializing form variables and hiding all but registration form
-  var loginForm = $("#login-form");
-  var submitScoreForm = $("#submit-score-form");
-  var registerForm = $("#register-form");
-  var forgotForm = $("#forgot-form");
-  var retrieveForm = $("#retrieve-form");
-  var showScore = $("#show-score-container");
-  var showPassword = $("#show-password-container");
-  submitScoreForm.addClass("hidden");
-  registerForm.addClass("hidden");
-  forgotForm.addClass("hidden");
-  retrieveForm.addClass("hidden");
-  showScore.addClass("hidden");
-  showPassword.addClass("hidden");
-}

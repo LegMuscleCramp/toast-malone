@@ -19,7 +19,7 @@
     <script type="text/javascript" src="js/ajax-validate-form.js"></script>
   </head>
   <body oncontextmenu="return false">
-  <i id="logout-button" class="far fa-times-circle"></i>
+  <i id="logout-button" class="far fa-times-circle hidden"></i>
   <span class="logout-message hidden">logging out...</span>
 
     <!-- toast container -->
@@ -76,21 +76,23 @@
         <input id="login-username" class="form-field" type="text" name="username" required><br>
         <span class="input-label">password</span><br>
         <input id="login-password" class="form-field" type="password" name="pwd" required>
-        <button id="login-submit" value="sign in" class="form-field submit-button blue">sign in</button>
+        <button id="login-submit" value="sign in" class="form-field submit-button blue">sign in</button><br>
         <span id="register-link" class="form-help-links">Register</span>
-        <span id="forgot-link" class="form-help-links">Forgot password?</span>
+        <span id="forgot-link" class="form-help-links">Forgot password?</span><br>
+        <span class="form-help-links play-again-link">play again</span>
       </div>
-      <div id="submit-score-form">
+      <div id="submit-score-form" class="each-form">
         <span id="welcome-message" class="form-notify"></span><br><br>
         <span id="final-score" class="final-score form-notify"></span><br>
-        <button id="submit-score" value="submit score" class="form-field submit-button blue">submit score</button>
+        <button id="submit-score" value="submit score" class="form-field submit-button blue">submit score</button><br>
+        <span class="form-help-links play-again-link">play again</span>
       </div>
-      <div id="show-score-container">
+      <div id="show-score-container" class="each-form">
         <div class="scoreboard-container">
           <table id="scoreboard-table">
           </table>
         </div>
-        <span id="play-again-link" class="form-help-links">play again</span>
+        <span class="form-help-links play-again-link">play again</span>
       </div>
       <div id="register-form" class="each-form">
         <span id="register-username-label" class="input-label">username</span><br>
@@ -102,13 +104,13 @@
         <span class="input-label">security answer</span><br>
         <input id="register-answer" class="form-field" type="text" name="answer" required><br>
         <button id="register-submit" value="register" class="form-field submit-button blue">register</button>
-        <span id="registration-confirmation" class="form-help-links"></span><br><br>
+        <span id="registration-confirmation" class="form-help-links"></span><br>
         <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="forgot-form" class="each-form">
         <span id="forgot-username-label" class="input-label">username</span><br>
         <input id="forgot-username" class="form-field" type="text" name="username" required><br>
-        <button id="forgot-submit" value="submit" class="submit-button blue form-field">submit</button>
+        <button id="forgot-submit" value="submit" class="submit-button blue form-field">submit</button><br>
         <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="retrieve-form" class="each-form">
@@ -116,7 +118,7 @@
         <span id="retrieve-question" class="form-notify"></span><br>
         <span id="retrieve-answer-label" class="input-label">security answer</span><br>
         <input id="retrieve-answer" class="form-field" type="text" name="answer" required><br>
-        <button id="retrieve-submit" value="submit" class="submit-button blue form-field">submit</button>
+        <button id="retrieve-submit" value="submit" class="submit-button blue form-field">submit</button><br>
         <span class="form-help-links login-link">return to login</span>
       </div>
       <div id="show-password-container">

@@ -20,14 +20,17 @@ body {
 
 #logout-button, .logout-message {
   position: absolute;
-  top: 4px;
-  right: 4px;
+  top: 6px;
+  right: 6px;
   z-index: 20;
   color: #f00;
-  font-size: 20px;
+  font-size: 32px;
 }
 
 .logout-message {
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 5px;
+  padding: 5px;
   font-family: 'Francois One';
 }
 
@@ -47,6 +50,10 @@ body {
   padding: 3vh 5vw 11vh;
 }
 
+.form-container {
+  overflow: auto;
+}
+
 /* container for active game objects */
 .toast-container {
   overflow-y: hidden;
@@ -55,7 +62,7 @@ body {
 
 /* styling for game cover  */
 .cover-game,.form-container {
-  background-color: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.95);
   z-index: 5;
   position: absolute;
   top: 0;
@@ -113,8 +120,6 @@ body {
   text-align: center;
   font-size: 10vw;
   text-transform: uppercase;
-  margin-block-start: 0;
-  margin-block-end: 0;
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -244,6 +249,7 @@ body {
 
 #start {
   z-index: 6;
+  margin-top: 40px;
 }
 
 .toast-active {
@@ -255,7 +261,7 @@ body {
 
 .form-container {
   font-family: 'Francois One';
-  font-size: 4vw;
+  font-size: 6vw;
   height: auto;
   min-height: 94vh;
 }
@@ -315,6 +321,11 @@ span.form-help-links:hover {
   cursor: pointer;
 }
 
+.play-again-link {
+  color: #00b533 !important;
+  margin-bottom: 30px;
+}
+
 #registration-confirmation {
   cursor: default !important;
 }
@@ -331,6 +342,57 @@ input.input-error {
   text-transform: none;
 }
 
+#show-score-container {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.scoreboard-container {
+  width: 100%;
+}
+
+#scoreboard-table {
+  width: 100%;
+  height: 50%;
+  color: #fff;
+}
+
+#scoreboard-table caption {
+  font-size: 8vw;
+}
+
+.leaderboard-rank {
+  background: url(img/toasty-rank.png) no-repeat center;
+  background-size: 50px;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  padding: 5px;
+}
+
+#rank1 {
+  background: url(img/toasty-rank1.png) no-repeat center;
+  background-size: 50px;
+}
+
+#rank2 {
+  background: url(img/toasty-rank2.png) no-repeat center;
+  background-size: 50px;
+}
+
+#rank3 {
+  background: url(img/toasty-rank3.png) no-repeat center;
+  background-size: 50px;
+}
+
+.leaderboard-name {
+  padding-left: 10%;
+}
+
 .hidden {
   display: none !important;
 }
@@ -338,9 +400,9 @@ input.input-error {
 @media only screen and (min-width: 600px) {
   /* styling for containers */
   .toast-container,.cover-game,.form-container {
-    width: 40vw;
-    height: 90vh;
-    padding: 5vh 30vw;
+    width: 80vw;
+    height: 86vh;
+    padding: 7vh 10vw;
   }
 
   .big-text {
@@ -349,7 +411,155 @@ input.input-error {
 
   /* full width button */
   .big-button {
-    max-width: 350px;
+    max-width: 400px;
+    line-height: 7vh;
+    padding: 16px;
+  }
+
+  span.form-notify {
+    font-size: 7vw;
+  }
+
+  .form-container {
+    font-family: 'Francois One';
+    font-size: 2.5vh;
+    min-height: 0;
+  }
+
+  .form-field {
+    font-size: 3vh;
+  }
+
+  div.each-form {
+    max-width: 500px;
+  }
+
+  #login-form .final-score {
+    font-size: 12vh !important;
+    font-family: 'Archivo Black'
+  }
+
+  #submit-score-form .final-score {
+    font-size: 20vh !important;
+    font-family: 'Archivo Black'
+  }
+
+  #toast-slice img {
+    width: 38%;
+    max-width: 140px;
+  }
+
+  #toaster img {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  #toast-slice {
+    margin-bottom: -2vh;
+  }
+
+  #toast-slice.toasting {
+    margin-bottom: -15vh !important;
+  }
+
+  #toaster::after {
+    width: 2vh;
+    height: 1.5vh;
+    margin: 2vh 0 0 0;
+  }
+
+  #toaster.toasting::after {
+    margin: 13vh 0 0 0 !important;
+  }
+
+  #scoreboard-table caption {
+    font-size: 6vw;
+  }
+
+  .leaderboard-name,.leaderboard-score {
+    line-height: 2.5vh;
+    font-size: 2.5vh;
+  }
+}
+
+/* tablets portrait */
+@media only screen and (min-width: 900px) and (max-width: 1199px) {
+  .big-button {
+    max-width: 500px;
+  }
+
+  .speed-gauge {
+    width: 100%;
+  }
+
+  .speed-gauge-bar {
+    padding: 30px;
+  }
+
+  #speed4 {
+    width: 150px;
+    height: 150px;
+    margin-left: -48px;
+  }
+
+  #multiplier {
+    top: 32px;
+  }
+
+  #toast-slice img {
+    width: 38%;
+    max-width: 140px;
+  }
+
+  #toaster img {
+    width: 70%;
+    max-width: 250px;
+  }
+
+  #toast-slice {
+    margin-bottom: -1vh;
+  }
+
+  #toast-slice.toasting {
+    margin-bottom: -11vh !important;
+  }
+
+  #toaster::after {
+    width: 1.5vh;
+    height: 1.5vh;
+    margin: 1.5vh 0 0 0;
+  }
+
+  #toaster.toasting::after {
+    margin: 10vh 0 0 0 !important;
+  }
+
+  .each-form {
+    max-width: 650px !important;
+  }
+
+  #submit-score-form .final-score {
+    font-size: 16vh !important;
+  }
+
+  #scoreboard-table {
+    height: 70%;
+  }
+}
+
+
+/* small desktop */
+@media only screen and (min-width: 1200px) and (max-height: 850px) {
+  /* styling for containers */
+  .toast-container,.cover-game,.form-container {
+    width: 60vw;
+    height: 90vh;
+    padding: 5vh 20vw;
+  }
+
+  /* full width button */
+  .big-button {
+    max-width: 400px;
     line-height: 7vh;
     padding: 16px;
   }
@@ -363,12 +573,16 @@ input.input-error {
   }
 
   #toast-slice img {
-    width: 38%;
+    width: 12%;
     max-width: 140px;
   }
 
+  #toaster {
+    margin-bottom: 10px;
+  }
+
   #toaster img {
-    width: 70%;
+    width: 20%;
     max-width: 250px;
   }
 
@@ -384,7 +598,7 @@ input.input-error {
 
   .form-container {
     font-family: 'Francois One';
-    font-size: 2vh;
+    font-size: 2.5vh;
     min-height: 0;
   }
 
@@ -394,6 +608,7 @@ input.input-error {
 
   div.each-form {
     width: 100%;
+    max-width: 400px;
   }
 
   .form-field {
@@ -408,5 +623,39 @@ input.input-error {
   #submit-score-form .final-score {
     font-size: 20vh !important;
     font-family: 'Archivo Black'
+  }
+
+  #scoreboard-table caption {
+    font-size: 4vw;
+  }
+}
+
+/* large desktop */
+@media only screen and (min-width: 1200px) {
+  /* styling for containers */
+  .toast-container,.cover-game,.form-container {
+    width: 60vw;
+    height: 90vh;
+    padding: 5vh 20vw;
+  }
+
+  #logout-button, .logout-message {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    font-size: 40px;
+  }
+
+  span.form-notify {
+    font-size: 7vh;
+  }
+
+  div.each-form {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  #scoreboard-table caption {
+    font-size: 6vh;
   }
 }

@@ -20,7 +20,7 @@ $(document).ready(function() {
       $("#toast-slice,#toaster").addClass("toasting");
     },1100);
     var timerId = setInterval(countdown, 1000);
-    timeLeft = 0; // change this back at the end
+    timeLeft = 3;
     var timerDisplay = $("#timer");
     timerDisplay.html("ready?");
 
@@ -28,7 +28,7 @@ $(document).ready(function() {
     function countdown() {
       if (timeLeft==0 && !playable) {
         timerDisplay.html("GO!");
-        timeLeft = 1; // change this back at the end
+        timeLeft = 30;
         playable = true;
       } else if(timeLeft==0 && playable) {
         clearTimeout(timerId);
@@ -129,6 +129,7 @@ function endGame(burnButton,scoreText,toasty,dim) {
   scoreText.removeClass("big-text-active");
   toasty.removeClass("toasty-lit-click-speed");
   toasty.children("img").attr("src","img/toasty-multiplier.png");
+  $("#multiplier").html("");
   var timer = $("#timer");
   timer.html("time's up");
   timer.attr("style","z-index:6");

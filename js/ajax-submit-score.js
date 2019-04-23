@@ -13,7 +13,7 @@ $(document).ready(function(){
         $("#show-score-container").removeClass("hidden");
 
         $.post("scoreboard.php",function(data,status){
-          $("#scoreboard-table").html(data);
+          $("#scoreboard-table").html("<caption>top 10 toasters</caption>"+ data);
         });
       }
     });
